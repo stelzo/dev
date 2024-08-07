@@ -39,5 +39,5 @@ Docs for git:
 brew install zellij
 
 brew install nvim
-
+brew install ripgrep
 
