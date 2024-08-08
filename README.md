@@ -1,14 +1,12 @@
-brew install wezterm
+# Dev Setup
 
-brew install font-meslo-lg-nerd-font
+nvim format code: visual mode + ä
 
-brew install powerlevel10k
+brew install wezterm font-meslo-lg-nerd-font powerlevel10k zsh-autosuggestions zsh-syntax-highlighting
 
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
 
 source ~/.zshrc
-
-brew install zsh-autosuggestions zsh-syntax-highlighting
 
 nano ~/.zshrc und 
 	HISTFILE=$HOME/.zhistory
