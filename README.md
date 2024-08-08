@@ -36,13 +36,10 @@ brew install eza (better ls)
 
 alias ls="eza --icons=always"
 
-brew install zoxide
-
 .zshrc:
 eval "$(zoxide init zsh)"
 alias cd="z"
+alias htop="btop"
 
-brew install zellij
-brew install nvim
-brew install ripgrep
+brew install btop zellij nvim ripgrep zoxide
 
