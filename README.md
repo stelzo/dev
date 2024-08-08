@@ -43,3 +43,22 @@ alias htop="btop"
 
 brew install btop zellij nvim ripgrep zoxide
 
+## tmux commands
+ctrl + space -> leader
+
+leader + c = create window
+leader + [0;9] = select window
+leader + & = kill window
+
+leader + % = split pane hori
+leader + " = split pane verti
+leader + -> = select right pane, etc
+leader + x = close pane
+
+tmux ls = list sessions
+tmux new -s <name> = new session
+
+leader + w = preview windows of sessions
+tmux attach -t <name> = attach to session
+
+leader + I = Install tpm packages update
