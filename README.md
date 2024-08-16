@@ -44,6 +44,9 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
 export PATH=$PATH:$(go env GOPATH)/bin
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
 ```
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
