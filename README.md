@@ -43,6 +43,7 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
+export PATH=$PATH:$(go env GOPATH)/bin
 ```
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
@@ -50,14 +51,24 @@ bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 ```
 
+### Tools
+
 `cd`, `ls` etc. alternatives
 ```sh
 cargo install eza
 cargo install xozide
 cargo install ripgrep
 sudo apt install btop
+go install github.com/charmbracelet/freeze@latest
+curl -f https://zed.dev/install.sh | sh
 ```
 
+Zed Theme
+
+Visit and follow commands: 
+```sh
+https://github.com/catppuccin/zed
+```
 Neovim. Needs current version, apt is too old.
 ```sh
 sudo snap install nvim --classic
