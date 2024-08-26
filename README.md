@@ -59,7 +59,7 @@ bindkey '^[[B' history-search-forward
 `cd`, `ls` etc. alternatives
 ```sh
 cargo install eza
-cargo install xozide
+cargo install zoxide
 cargo install ripgrep
 sudo apt install btop
 go install github.com/charmbracelet/freeze@latest
