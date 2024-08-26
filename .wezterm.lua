@@ -31,7 +31,7 @@ config.color_schemes = {
 config.color_scheme = "OLEDppucin"
 
 config.font = wezterm.font("ProFontIIx") -- alternative: MesloLGS Nerd Font Mono
-config.font_size = 16
+config.font_size = 14
 
 config.enable_tab_bar = false
 
