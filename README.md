@@ -68,10 +68,8 @@ curl -f https://zed.dev/install.sh | sh
 
 Zed Theme
 
-Visit and follow commands: 
-```sh
-https://github.com/catppuccin/zed
-```
+Visit and follow commands: https://github.com/catppuccin/zed. Mocha - no italics
+
 Neovim. Needs current version, apt is too old.
 ```sh
 sudo snap install nvim --classic
