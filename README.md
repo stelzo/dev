@@ -85,6 +85,9 @@ git init
 git remote add origin git@github.com:stelzo/dev.git
 git fetch origin
 git checkout -b main --track origin/main
+
+cp ~/.config/fonts/* ~/.fonts/
+fc-cache -f -v
 ```
 
 Start Wezterm.
