@@ -70,17 +70,6 @@ Zed Theme
 
 Visit and follow commands: https://github.com/catppuccin/zed. Mocha - no italics
 
-Neovim. Needs current version, apt is too old.
-```sh
-sudo snap install nvim --classic
-```
-
-`nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
-
-Start `nvim` to install all plugins.
-
-Remove previous comment.
-
 Wezterm
 ```sh
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -99,6 +88,17 @@ git checkout -b main --track origin/main
 ```
 
 Start Wezterm.
+
+Neovim. Needs current version, apt is too old.
+```sh
+sudo snap install nvim --classic
+```
+
+`nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
+
+Start `nvim` to install all plugins.
+
+Remove previous comment.
 
 Tmux 
 ```sh
