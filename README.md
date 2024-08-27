@@ -62,7 +62,7 @@ bindkey '^[[B' history-search-forward
 `cd`, `ls` etc. alternatives
 ```sh
 cargo install eza
-cargo install xozide
+cargo install zoxide
 cargo install ripgrep
 cargo install cargo-mommy
 sudo apt install btop
@@ -72,20 +72,7 @@ curl -f https://zed.dev/install.sh | sh
 
 Zed Theme
 
-Visit and follow commands: 
-```sh
-https://github.com/catppuccin/zed
-```
-Neovim. Needs current version, apt is too old.
-```sh
-sudo snap install nvim --classic
-```
-
-`nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
-
-Start `nvim` to install all plugins.
-
-Remove previous comment.
+Visit and follow commands: https://github.com/catppuccin/zed. Mocha - no italics
 
 Wezterm
 ```sh
@@ -102,9 +89,23 @@ git init
 git remote add origin git@github.com:stelzo/dev.git
 git fetch origin
 git checkout -b main --track origin/main
+
+cp ~/.config/fonts/* ~/.fonts/
+fc-cache -f -v
 ```
 
 Start Wezterm.
+
+Neovim. Needs current version, apt is too old.
+```sh
+sudo snap install nvim --classic
+```
+
+`nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
+
+Start `nvim` to install all plugins.
+
+Remove previous comment.
 
 Tmux 
 ```sh
