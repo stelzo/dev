@@ -47,6 +47,9 @@ export PATH=$PATH:$(go env GOPATH)/bin
 __git_files () { 
     _wanted files expl 'local files' _files     
 }
+
+# Cargo mommy
+export CARGO_MOMMYS_MOODS=thirsty/chill/ominous
 ```
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
@@ -61,6 +64,7 @@ bindkey '^[[B' history-search-forward
 cargo install eza
 cargo install xozide
 cargo install ripgrep
+cargo install cargo-mommy
 sudo apt install btop
 go install github.com/charmbracelet/freeze@latest
 curl -f https://zed.dev/install.sh | sh
