@@ -39,6 +39,9 @@ setopt hist_verify
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$PATH"
+
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
