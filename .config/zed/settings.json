@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "vim_mode": true,
+  "vim_mode": false,
   "theme": {
     "mode": "dark",
     "light": "One Light",
@@ -18,7 +18,7 @@
   "buffer_font_size": 18,
   "ui_font_family": "MesloLGS Nerd Font Mono",
   "cursor_blink": false,
-  "relative_line_numbers": true,
+  "relative_line_numbers": false,
   "inlay_hints": {
     "enabled": true
   },
