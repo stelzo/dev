@@ -35,7 +35,7 @@ config.font_size = 14
 
 config.enable_tab_bar = false
 
-config.window_decorations = "TITLE | RESIZE"
+config.window_decorations = "NONE" -- "TITLE | RESIZE"
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 10
 config.initial_rows = 30
