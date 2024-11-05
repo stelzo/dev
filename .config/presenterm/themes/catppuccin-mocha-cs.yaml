@@ -4,7 +4,7 @@ default:
     percent: 8
   colors:
     foreground: "cdd6f4"
-    background: "1e1e2e"
+    #background: "1e1e2e"
 
 slide_title:
   alignment: center
