@@ -53,6 +53,8 @@ __git_files () {
 
 # Cargo mommy
 export CARGO_MOMMYS_MOODS=thirsty/chill/ominous
+
+export XDG_CONFIG_HOME=$HOME/.config
 ```
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
@@ -68,6 +70,7 @@ cargo install eza
 cargo install zoxide
 cargo install ripgrep
 cargo install cargo-mommy
+cargo install presenterm
 sudo apt install btop
 go install github.com/charmbracelet/freeze@latest
 curl -f https://zed.dev/install.sh | sh
@@ -151,8 +154,9 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
+export XDG_CONFIG_HOME=$HOME/.config
 
-brew install btop tmux nvim ripgrep zoxide
+brew install btop tmux nvim ripgrep zoxide presenterm
 
 
 nvim format code: visual mode + ä
