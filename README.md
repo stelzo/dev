@@ -51,6 +51,9 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 
+# add personal scripts
+export PATH="$HOME/bin:$PATH"
+
 # Cargo mommy
 export CARGO_MOMMYS_MOODS=thirsty/chill/ominous
 
