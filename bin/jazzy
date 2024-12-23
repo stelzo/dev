@@ -1,0 +1,2 @@
+#!/bin/zsh
+distrobox enter jazzy -- zsh -c "source /opt/ros/jazzy/setup.zsh && exec zsh"
