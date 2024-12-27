@@ -1,21 +1,36 @@
 # Dev Setup
 
+Follow all steps. Nothing is optional.
+
 ## Ubuntu
 
-Languages
+Golang
 ```sh
 sudo snap install go --classic
+```
+
+Rust
+```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Nerdfont
+Zig
+
+Linux
 ```sh
-mkdir -p ~/.fonts && cd ~/.fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip
-unzip Meslo.zip
-rm Meslo.zip
-fc-cache -fv
+mkdir -p $HOME/.local/bin
+cd $HOME/.local/bin
+curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux.tar.xz
+tar xf zig-linux.tar.xz
+cp zig-linux-x86_64-0.13.0/zig .
+rm -r zig-*
 ```
+
+MacOS
+```sh
+brew install zig
+```
+
 zsh
 ```sh
 sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
@@ -83,12 +98,21 @@ Zed Theme
 
 Visit and follow commands: https://github.com/catppuccin/zed. Mocha - no italics
 
-Wezterm
+#### Ghostty
+
+Mac
 ```sh
-curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
-echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
-sudo apt update
-sudo apt install wezterm
+brew install ghostty
+```
+
+Ubuntu
+
+Get Ghostty and build it.
+```sh
+curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux
+git clone https://github.com/ghostty-org/ghostty
+cd ghostty
+zig build -p $HOME/.local -Doptimize=ReleaseFast
 ```
 
 Configs (inplace update ~/ dir)
@@ -103,7 +127,7 @@ cp ~/.config/fonts/* ~/.fonts/
 fc-cache -f -v
 ```
 
-Start Wezterm.
+Start Ghostty.
 
 Neovim. Needs current version, apt is too old.
 ```sh
