@@ -22,8 +22,8 @@ mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
 curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux.tar.xz
 tar xf zig-linux.tar.xz
-cp zig-linux-x86_64-0.13.0/zig .
-rm -r zig-*
+rm zig-linux.tar.xz
+mv zig-linux-x86_64-0.13.0 zig
 ```
 
 MacOS
@@ -56,6 +56,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/zig:$PATH"
 
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
@@ -109,9 +110,11 @@ Ubuntu
 
 Get Ghostty and build it.
 ```sh
-curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux
+sudo apt-get install libglib2.0-dev libgtk-4-dev libadwaita-1-dev
+
 git clone https://github.com/ghostty-org/ghostty
 cd ghostty
+git checkout v1.0.0
 zig build -p $HOME/.local -Doptimize=ReleaseFast
 ```
 
