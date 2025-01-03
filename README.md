@@ -108,7 +108,22 @@ brew install ghostty
 
 Ubuntu
 
-Get Ghostty and build it.
+From Binary (recommended)
+```sh
+source /etc/os-release
+curl -s https://api.github.com/repos/mkasberg/ghostty-ubuntu/releases/latest \
+	| grep "browser_download_url.*amd64_${VERSION_ID}.deb" \
+	| cut -d : -f 2,3 \
+	| tr -d \" \
+	| head -n 1 \
+	| xargs -n 1 curl -LO
+sudo dpkg -i ghostty_*amd64_${VERSION_ID}.deb
+rm ghostty_*amd64_${VERSION_ID}.deb
+```
+
+If you get a dependency error, run `sudo apt-get install -f` once, then repeat the `dpkg` command.
+
+From Source
 ```sh
 sudo apt-get install libglib2.0-dev libgtk-4-dev libadwaita-1-dev
 
