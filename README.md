@@ -1,20 +1,21 @@
 # Dev Setup
 
-Follow all steps. Nothing is optional.
+Setting up my general development environment with scripts, fonts, code editors, etc.
 
-## Ubuntu
+## Ubuntu >=24.04
 
-Golang
 ```sh
-sudo snap install go --classic
+sudo apt-get install software-properties-common
 ```
 
-Rust
+### Go and Rust
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo add-apt-repository ppa:longsleep/golang-backports -y
+sudo apt-get update --assume-yes
+sudo apt-get install rustup golang-go --assume-yes
 ```
 
-Zig
+### Zig (optional)
 
 Linux
 ```sh
@@ -31,10 +32,10 @@ MacOS
 brew install zig
 ```
 
-zsh
+### zsh
 ```sh
 sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
-chsh # set /usr/bin/zsh
+chsh -s /usr/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
 
@@ -75,13 +76,14 @@ export CARGO_MOMMYS_MOODS=thirsty/chill/ominous
 
 export XDG_CONFIG_HOME=$HOME/.config
 ```
+
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 ```
 
-### Tools
+### Other Tools
 
 `cd`, `ls` etc. alternatives
 ```sh
@@ -145,12 +147,14 @@ cp ~/.config/fonts/* ~/.fonts/
 fc-cache -f -v
 ```
 
-Start Ghostty.
-
-Neovim. Needs current version, apt is too old.
+Neovim
 ```sh
-sudo snap install nvim --classic
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt-get update
+sudo apt-get install neovim --assume-yes
 ```
+
+Start Ghostty.
 
 `nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
 
