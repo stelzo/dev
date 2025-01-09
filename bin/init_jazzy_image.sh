@@ -4,8 +4,8 @@ set -e
 
 sudo apt-get install lsb-release --assume-yes
 
-if [ "$(lsb_release -rs)" != "18.04" ]; then
-    echo "This script is for Ubuntu 18.04"
+if [ "$(lsb_release -rs)" != "24.04" ]; then
+    echo "This script is for Ubuntu 24.04"
     exit 1
 fi
 
