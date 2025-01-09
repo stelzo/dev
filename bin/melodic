@@ -1,0 +1,2 @@
+#!/bin/zsh
+distrobox enter melodic -- bash -c "source /opt/ros/melodic/setup.bash && exec bash"
