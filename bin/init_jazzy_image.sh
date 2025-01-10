@@ -48,6 +48,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-a
 sudo apt-get update --assume-yes && sudo apt-get install ros-dev-tools ros-jazzy-desktop --assume-yes
 
 # Rust ROS2 integration
+sudo apt-get install libclang-dev --assume-yes
 cargo install cargo-binstall
 pip install colcon-ros-cargo --break-system-packages
 cargo binstall cargo-ament-build -y
