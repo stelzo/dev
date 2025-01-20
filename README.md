@@ -58,6 +58,7 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/zig:$PATH"
+export GPG_TTY=$(tty)
 
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
