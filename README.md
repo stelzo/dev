@@ -89,6 +89,11 @@ cargo install zoxide
 cargo install ripgrep
 cargo install cargo-mommy
 cargo install presenterm
+
+rustup default nightly
+cargo install --git https://github.com/itsjunetime/tdf
+rustup default stable
+
 sudo apt install btop
 go install github.com/charmbracelet/freeze@latest
 curl -f https://zed.dev/install.sh | sh

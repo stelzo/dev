@@ -1,6 +1,7 @@
 font-family = ProFontIIx
 
 window-padding-y = 2
+unfocused-split-opacity = 1
 
 palette = 0=#45475a
 palette = 1=#f38ba8
