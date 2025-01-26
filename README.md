@@ -1,20 +1,21 @@
 # Dev Setup
 
-Follow all steps. Nothing is optional.
+Setting up my general development environment with scripts, fonts, code editors, etc.
 
-## Ubuntu
+## Ubuntu >=24.04
 
-Golang
 ```sh
-sudo snap install go --classic
+sudo apt-get install software-properties-common
 ```
 
-Rust
+### Go and Rust
 ```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+sudo add-apt-repository ppa:longsleep/golang-backports -y
+sudo apt-get update --assume-yes
+sudo apt-get install rustup golang-go --assume-yes
 ```
 
-Zig
+### Zig (optional)
 
 Linux
 ```sh
@@ -22,8 +23,8 @@ mkdir -p $HOME/.local/bin
 cd $HOME/.local/bin
 curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux.tar.xz
 tar xf zig-linux.tar.xz
-cp zig-linux-x86_64-0.13.0/zig .
-rm -r zig-*
+rm zig-linux.tar.xz
+mv zig-linux-x86_64-0.13.0 zig
 ```
 
 MacOS
@@ -31,10 +32,10 @@ MacOS
 brew install zig
 ```
 
-zsh
+### zsh
 ```sh
 sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
-chsh # set /usr/bin/zsh
+chsh -s /usr/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
 
@@ -56,6 +57,8 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/zig:$PATH"
+export GPG_TTY=$(tty)
 
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
@@ -74,13 +77,14 @@ export CARGO_MOMMYS_MOODS=thirsty/chill/ominous
 
 export XDG_CONFIG_HOME=$HOME/.config
 ```
+
 `cat -v`, do "up" and "down" arrow and check codes.
 ```
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 ```
 
-### Tools
+### Other Tools
 
 `cd`, `ls` etc. alternatives
 ```sh
@@ -112,11 +116,28 @@ brew install ghostty
 
 Ubuntu
 
-Get Ghostty and build it.
+From Binary (recommended)
 ```sh
-curl -L https://ziglang.org/download/0.13.0/zig-linux-x86_64-0.13.0.tar.xz -o zig-linux
+source /etc/os-release
+curl -s https://api.github.com/repos/mkasberg/ghostty-ubuntu/releases/latest \
+	| grep "browser_download_url.*amd64_${VERSION_ID}.deb" \
+	| cut -d : -f 2,3 \
+	| tr -d \" \
+	| head -n 1 \
+	| xargs -n 1 curl -LO
+sudo dpkg -i ghostty_*amd64_${VERSION_ID}.deb
+rm ghostty_*amd64_${VERSION_ID}.deb
+```
+
+If you get a dependency error, run `sudo apt-get install -f` once, then repeat the `dpkg` command.
+
+From Source
+```sh
+sudo apt-get install libglib2.0-dev libgtk-4-dev libadwaita-1-dev
+
 git clone https://github.com/ghostty-org/ghostty
 cd ghostty
+git checkout v1.0.0
 zig build -p $HOME/.local -Doptimize=ReleaseFast
 ```
 
@@ -132,12 +153,14 @@ cp ~/.config/fonts/* ~/.fonts/
 fc-cache -f -v
 ```
 
-Start Ghostty.
-
-Neovim. Needs current version, apt is too old.
+Neovim
 ```sh
-sudo snap install nvim --classic
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt-get update
+sudo apt-get install neovim --assume-yes
 ```
+
+Start Ghostty.
 
 `nano .config/nvim/init.lua` Comment out (`--`) `require("stelzo")`, so the plugins are not parsed before the plugin manager is even installed.
 
@@ -153,47 +176,58 @@ tmux source ~/.config/tmux/tmux.conf
 ```
 `Ctrl + Space + I` (Install tmux deps)
 
-## Mac
-brew install wezterm font-meslo-lg-nerd-font powerlevel10k zsh-autosuggestions zsh-syntax-highlighting nvim
+## Mac [WIP]
 
+```sh
+brew install font-meslo-lg-nerd-font powerlevel10k zsh-autosuggestions zsh-syntax-highlighting nvim
 echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >> ~/.zshrc
-
 source ~/.zshrc
 
-nano ~/.zshrc und 
-	HISTFILE=$HOME/.zhistory
-	SAVEHIST=1000
-	HISTSIZE=999
-	setopt share_history
-	setopt hist_expire_dups_first
-	setopt hist_ignore_dups
-	setopt hist_verify
-cat -v, do "up" and "down" arrow and check codes.
+```
 
-nach ~/.zshrc:
-	# completion using arrow keys (based on history)
-	bindkey '^[[A' history-search-backward
-	bindkey '^[[B' history-search-forward
- 
+Run `nano ~/.zshrc` and set
+```
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt share_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+```
+
+`cat -v`, do "up" and "down" arrow and check codes.
+
+Add to `~/.zshrc`
+```
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+```
+
+```sh
 echo "source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-
 brew install eza (better ls)
-
 alias ls="eza --icons=always"
+```
 
-.zshrc:
+Add to `.zshrc`.
+```sh
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
 export XDG_CONFIG_HOME=$HOME/.config
-
 brew install btop tmux nvim ripgrep zoxide presenterm
+```
 
+### Tips
 
+#### Nvim
 nvim format code: visual mode + ä
 
-## tmux commands
+
+#### tmux
 ctrl + space -> leader
 
 leader + c = create window
