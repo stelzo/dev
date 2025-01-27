@@ -101,6 +101,14 @@ rustup default nightly
 cargo install --git https://github.com/itsjunetime/tdf
 rustup default stable
 
+rustup component add rust-analyzer
+
+mkdir -o ~/projects/thirds && cd ~/projects/thirds
+git clone https://github.com/helix-editor/helix
+cd helix
+cargo install --path helix-term --locked
+ln -Ts $PWD/runtime ~/.config/helix/runtime
+
 go install github.com/charmbracelet/freeze@latest
 curl -f https://zed.dev/install.sh | sh
 ```
