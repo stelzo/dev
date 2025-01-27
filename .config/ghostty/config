@@ -3,6 +3,11 @@ font-family = ProFontIIx
 window-padding-y = 2
 unfocused-split-opacity = 1
 
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+
 palette = 0=#45475a
 palette = 1=#f38ba8
 palette = 2=#a6e3a1
