@@ -95,6 +95,7 @@ cargo install zoxide
 cargo install ripgrep
 cargo install cargo-mommy
 cargo install presenterm
+cargo install taplo-cli --locked --features lsp
 
 rustup default nightly
 cargo install --git https://github.com/itsjunetime/tdf
