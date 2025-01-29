@@ -1,0 +1,2 @@
+#!/bin/zsh
+distrobox enter noetic -- bash -c "source /opt/ros/noetic/setup.bash && exec bash"
