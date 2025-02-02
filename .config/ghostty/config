@@ -3,10 +3,10 @@ font-family = ProFontIIx
 window-padding-y = 2
 unfocused-split-opacity = 1
 
-keybind = super+h=goto_split:left
-keybind = super+l=goto_split:right
-keybind = super+j=goto_split:bottom
-keybind = super+k=goto_split:top
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
 keybind = super+shift+o=new_split:right
 keybind = super+shift+e=new_split:down
 
