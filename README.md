@@ -64,7 +64,7 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
-alias rgg="rg -HnwC2"
+alias rgg="rg -HnC2"
 export PATH=$PATH:$(go env GOPATH)/bin
 __git_files () { 
     _wanted files expl 'local files' _files     
