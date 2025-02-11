@@ -120,6 +120,8 @@ Visit and follow commands: https://github.com/catppuccin/zed. Mocha - no italics
 
 #### Ghostty
 
+> Note: ssh does not recognize the terminal correctly yet. When you have some errors regarding "Error opening terminal", do `export TERM=xterm-256color`.
+
 Mac
 ```sh
 brew install ghostty
