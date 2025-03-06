@@ -65,6 +65,7 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
 alias rgg="rg -HnC2"
+alias gg="lazygit"
 export PATH=$PATH:$(go env GOPATH)/bin
 __git_files () { 
     _wanted files expl 'local files' _files     
@@ -89,7 +90,8 @@ bindkey '^[[B' history-search-forward
 
 `cd`, `ls` etc. alternatives
 ```sh
- sudo apt install btop libpoppler-dev libpoppler-glib-dev zathura pdf-presenter-console
+sudo apt install btop libpoppler-dev libpoppler-glib-dev zathura pdf-presenter-console
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 cargo install eza
 cargo install zoxide
@@ -112,6 +114,7 @@ ln -Ts $PWD/runtime ~/.config/helix/runtime
 
 go install github.com/charmbracelet/freeze@latest
 curl -f https://zed.dev/install.sh | sh
+brew install jesseduffield/lazygit/lazygit
 ```
 
 Zed Theme
