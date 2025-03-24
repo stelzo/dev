@@ -15,3 +15,14 @@ inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
 inlayHints.typeHints.hideClosureInitialization = false
+
+[language-server.tinymist]
+command = "tinymist"
+# config = { exportPdf = "onType", outputPath = "$root/target/$dir/$name" } # uses internal export, so not working with my typst?
+
+[[language]]
+name = "typst"
+formatter = { command = "typstfmt", args = ["--output", "-"] }
+auto-format = true
+language-servers = ["tinymist"]
+

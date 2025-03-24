@@ -100,6 +100,10 @@ cargo install cargo-mommy
 cargo install presenterm
 cargo install taplo-cli --locked --features lsp
 
+curl -s https://install.steado.tech/typst | sh
+cargo install --git https://github.com/astrale-sharp/typstfmt.git
+cargo install --git https://github.com/Myriad-Dreamin/tinymist --locked tinymist
+
 rustup default nightly
 cargo install --git https://github.com/itsjunetime/tdf
 rustup default stable
