@@ -65,7 +65,7 @@ eval "$(zoxide init zsh)"
 alias cd="z"
 alias htop="btop"
 alias rgg="rg -HnC2"
-alias gg="lazygit"
+alias gg="gitui -t catppuccin-mocha.ron"
 export PATH=$PATH:$(go env GOPATH)/bin
 __git_files () { 
     _wanted files expl 'local files' _files     
@@ -99,6 +99,7 @@ cargo install ripgrep
 cargo install cargo-mommy
 cargo install presenterm
 cargo install taplo-cli --locked --features lsp
+cargo install gitui --locked
 
 curl -s https://install.steado.tech/typst | sh
 cargo install --git https://github.com/astrale-sharp/typstfmt.git
