@@ -93,13 +93,15 @@ bindkey '^[[B' history-search-forward
 sudo apt install btop libpoppler-dev libpoppler-glib-dev zathura pdf-presenter-console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-cargo install eza
-cargo install zoxide
-cargo install ripgrep
-cargo install cargo-mommy
-cargo install presenterm
+cargo install binstall --locked
+cargo binstall eza
+cargo binstall zoxide
+cargo binstall ripgrep
+cargo binstall cargo-mommy
+cargo binstall presenterm
 cargo install taplo-cli --locked --features lsp
 cargo install gitui --locked
+cargo binstall rerun-cli
 
 curl -s https://install.steado.tech/typst | sh
 cargo install --git https://github.com/astrale-sharp/typstfmt.git
