@@ -4,9 +4,17 @@ name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
 auto-format = true
 
+# [language-server.copilot]
+# command = "copilot"
+# args = ["--stdio"]
+[[language]]
+name = "awk"
+file-types = ["rl"]
+
 [[language]]
 name = "rust"
 auto-format = true
+# language-servers = ["rust-analyzer", "copilot"]
 
 [language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = false
