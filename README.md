@@ -197,6 +197,27 @@ tmux source ~/.config/tmux/tmux.conf
 ```
 `Ctrl + Space + I` (Install tmux deps)
 
+### Rust Compiler Speedup
+```sh
+rustup default nightly
+rustup update
+rustup component add rustc-codegen-cranelift-preview --toolchain nightly
+RUSTFLAGS="-Z threads=8" cargo build
+```
+
+or export `RUSTFLAGS` to your environment.
+
+Now you can set a general config for cargo to use the cranelift backend for debug builds.
+
+`~/.cargo/config`
+```sh
+[unstable]
+codegen-backend = true
+
+[profile.dev]
+codegen-backend = "cranelift"
+```
+
 ## Mac [WIP]
 
 ```sh
