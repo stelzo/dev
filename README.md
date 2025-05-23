@@ -34,7 +34,7 @@ brew install zig
 
 ### zsh
 ```sh
-sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
+sudo apt install zsh
 chsh -s /usr/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
@@ -52,8 +52,8 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# shell autosuggestions
+eval "$(starship init zsh)"
 
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
@@ -98,6 +98,9 @@ cargo install zoxide
 cargo install ripgrep
 cargo install cargo-mommy
 cargo install presenterm
+cargo install tokei
+cargo install mask
+cargo install starship
 cargo install taplo-cli --locked --features lsp
 cargo install gitui --locked
 
