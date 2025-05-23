@@ -103,6 +103,7 @@ cargo install mask
 cargo install starship
 cargo install taplo-cli --locked --features lsp
 cargo install gitui --locked
+cargo binstall rerun-cli
 
 curl -s https://install.steado.tech/typst | sh
 cargo install --git https://github.com/astrale-sharp/typstfmt.git
