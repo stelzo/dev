@@ -34,7 +34,7 @@ brew install zig
 
 ### zsh
 ```sh
-sudo apt install zsh
+sudo apt install zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s /usr/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 ```
@@ -52,8 +52,11 @@ setopt hist_expire_dups_first
 setopt hist_ignore_dups
 setopt hist_verify
 
+
 # shell autosuggestions
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
