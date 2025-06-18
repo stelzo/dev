@@ -2,6 +2,8 @@
 
 set -e
 
+export TERM=xterm-256color
+
 echo "The Noetic Container Setup is minimal because many packages don't support Ubuntu 18.04."
 echo "Use bash instead of zsh for using this container."
 
@@ -29,7 +31,7 @@ sudo apt-get install software-properties-common --assume-yes
 
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt-get update --assume-yes
-sudo apt-get install neovim --assume-yes
+sudo apt-get install vim neovim --assume-yes
 
 sudo apt-get install tmux nano curl python3-pip --assume-yes
 
@@ -41,9 +43,9 @@ curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo ap
 sudo apt-get update --assume-yes
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 sudo apt-get install ros-noetic-desktop-full --assume-yes
-sudo apt-get install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential --assume-yes
+sudo apt-get install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential --assume-yes
 
-sudo apt-get install python-rosdep
+# pip3 install catkin-pkg empy
 sudo rosdep init
 rosdep update
 
