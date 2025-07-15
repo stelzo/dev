@@ -2,6 +2,8 @@
 
 set -e
 
+export TERM=xterm-256color
+
 echo "The Noetic Container Setup is minimal because many packages don't support Ubuntu 18.04."
 echo "Use bash instead of zsh for using this container."
 
@@ -26,10 +28,6 @@ read -p "Press Enter when done..." tmp
 
 # Zsh and tools
 sudo apt-get install software-properties-common --assume-yes
-
-#sudo add-apt-repository ppa:neovim-ppa/unstable -y
-#sudo apt-get update --assume-yes
-#sudo apt-get install neovim --assume-yes
 
 sudo apt-get install nano curl python3-pip --assume-yes
 
