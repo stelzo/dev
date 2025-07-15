@@ -4,6 +4,60 @@ name = "toml"
 formatter = { command = "taplo", args = ["fmt", "-"] }
 auto-format = true
 
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+language-servers = ["yaml-language-server"]
+
+[language-server.yaml-language-server]
+config = { yaml = { schemas = { kubernetes = "/*.y{a,}ml" }, format = { enable = true } } }
+
+[[language]]
+name = "cpp"
+scope = "source.cpp"
+file-types = [
+  "cpp",
+  "hpp",
+  "c++",
+  "h++",
+  "cc",
+  "hh",
+  "cxx",
+  "hxx",
+  "tcc",
+  "ino",
+  "cu",
+  "cuh",
+  "h",
+]
+shebangs = []
+roots = [
+  ".clangd",
+  ".clang-tidy",
+  ".clang-format",
+  "compile_commands.json",
+  "compile_commands.txt",
+  "build.ninja",
+  "build.gradle",
+  "CMakeLists.txt",
+  ".git",
+]
+comment-token = "//"
+language-servers = ["clangd"]
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.clangd]
+command = "clangd"
+args = [
+  "--query-driver=/usr/bin/g++,/usr/bin/gcc,/usr/local/cuda/bin/nvcc",
+  "--header-insertion=iwyu",
+]
+# The following config tells clangd to treat .tcc files as C++.
+[language-server.clangd.config]
+InlayHints = { Enabled = true }
+Completion = { IncludeFixIts = true }
+"clangd.fallbackFlags" = ["-xc++"]
+
 # [language-server.copilot]
 # command = "copilot"
 # args = ["--stdio"]
@@ -33,4 +87,3 @@ name = "typst"
 formatter = { command = "typstfmt", args = ["--output", "-"] }
 auto-format = true
 language-servers = ["tinymist"]
-
