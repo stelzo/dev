@@ -45,6 +45,7 @@ roots = [
 comment-token = "//"
 language-servers = ["clangd"]
 indent = { tab-width = 4, unit = "    " }
+auto-format = true
 
 [language-server.clangd]
 command = "clangd"
