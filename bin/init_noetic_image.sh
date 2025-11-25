@@ -29,11 +29,7 @@ read -p "Press Enter when done..." tmp
 # Zsh and tools
 sudo apt-get install software-properties-common --assume-yes
 
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt-get update --assume-yes
-sudo apt-get install vim neovim --assume-yes
-
-sudo apt-get install tmux nano curl python3-pip --assume-yes
+sudo apt-get install nano curl python3-pip --assume-yes
 
 # ROS1 Noetic
 
@@ -41,11 +37,12 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 
 sudo apt-get update --assume-yes
-sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
-sudo apt-get install ros-noetic-desktop-full --assume-yes
+sudo apt-get install ros-noetic-desktop --assume-yes
+# if the last command failed with xorg stuff, apt remove all the xorg stuff
+
 sudo apt-get install python3-rosdep python3-rosinstall python3-rosinstall-generator python3-wstool build-essential --assume-yes
 
-# pip3 install catkin-pkg empy
+sudo apt-get install python3-rosdep
 sudo rosdep init
 rosdep update
 
