@@ -1,7 +1,8 @@
-theme = "catppuccin_mocha"
+theme = "rose_pine"
 
 [editor]
 auto-format = true
+rainbow-brackets = true
 
 [keys.normal]
 A-k = [

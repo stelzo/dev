@@ -1,3 +1,28 @@
+[[language]]
+name = "ratslang"
+scope = "source.ratslang"
+file-types = ["ratslang", "rl"]
+roots = []
+comment-token = "#"
+injection-regex = "ratslang"
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "ratslang"
+source = { git = "https://github.com/stelzo/tree-sitter-ratslang", rev = "4896dc23b582fa95716853b27697d3f371afc9ed" }
+
+[[language]]
+name = "minot"
+scope = "source.minot"
+file-types = ["minot", "mt"]
+roots = []
+comment-token = "#"
+injection-regex = "minot"
+indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "minot"
+source = { git = "https://github.com/stelzo/tree-sitter-minot", rev = "225dd5200e00cc894b51d94edd3463a3ec466fb5" }
 
 [[language]]
 name = "toml"
@@ -62,9 +87,6 @@ Completion = { IncludeFixIts = true }
 # [language-server.copilot]
 # command = "copilot"
 # args = ["--stdio"]
-[[language]]
-name = "awk"
-file-types = ["rl"]
 
 [[language]]
 name = "rust"
