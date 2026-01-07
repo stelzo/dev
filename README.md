@@ -111,7 +111,7 @@ rustup default stable
 brew install yaml-language-server
 rustup component add rust-analyzer
 
-mkdir -o ~/projects/thirds && cd ~/projects/thirds
+mkdir -p ~/projects/thirds && cd ~/projects/thirds
 git clone https://github.com/helix-editor/helix
 cd helix
 cargo install --path helix-term --locked
