@@ -6,6 +6,7 @@ Setting up my general development environment with scripts, fonts, code editors,
 
 ```sh
 sudo apt-get install software-properties-common
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ### Go and Rust
@@ -107,6 +108,7 @@ rustup default nightly
 cargo install --git https://github.com/itsjunetime/tdf
 rustup default stable
 
+brew install yaml-language-server
 rustup component add rust-analyzer
 
 mkdir -o ~/projects/thirds && cd ~/projects/thirds
