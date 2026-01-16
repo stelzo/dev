@@ -218,6 +218,10 @@ codegen-backend = true
 codegen-backend = "cranelift"
 ```
 
+## Git Best Practices
+
+Follow: https://docs.codeberg.org/security/gpg-key/
+
 ## Mac [WIP]
 
 ```sh
