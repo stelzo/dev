@@ -4,7 +4,7 @@ Setting up my general development environment with scripts, fonts, code editors,
 
 ## Arch (CachyOS)
 
-The new setup is using CachyOS as base distro. For the old one, skip to the Ubuntu section.
+The new setup is using CachyOS as base distro. See the [Ubuntu branch](https://github.com/stelzo/dev/tree/ubuntu) for the previous version.
 
 Git
 ```sh
