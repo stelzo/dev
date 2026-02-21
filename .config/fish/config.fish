@@ -1,3 +1,7 @@
+if not status --is-interactive
+    exit 0 # fix programs like scp or rsync
+end
+
 source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 # overwrite greeting
@@ -35,8 +39,13 @@ starship init fish | source # too slow
 
 set -gx CARGO_MOMMYS_MOODS thirsty/chill/ominous
 set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx EDITOR hx
+set -gx EDITOR /home/chsieh/.cargo/bin/hx
 set -gx TERM xterm-256color
+
+# ollama
+# set -gx ANTHROPIC_AUTH_TOKEN ollama
+# set -gx ANTHROPIC_API_KEY ""
+# set -gx ANTHROPIC_BASE_URL http://192.168.0.4:11434
 
 cat ~/.cache/wal/sequences &
 disown
