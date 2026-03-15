@@ -1,2 +1,2 @@
 #!/bin/zsh
-distrobox enter jazzy -- zsh -c "source /opt/ros/jazzy/setup.zsh && exec zsh"
+distrobox enter jazzy -- fish -c "bass source /opt/ros/jazzy/setup.bash && exec /bin/fish"

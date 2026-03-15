@@ -9,7 +9,7 @@ indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "ratslang"
-source = { git = "https://github.com/stelzo/tree-sitter-ratslang", rev = "4896dc23b582fa95716853b27697d3f371afc9ed" }
+source = { git = "https://codeberg.org/stelzo/tree-sitter-ratslang", rev = "8c7b5014b99c3d0757a431128c9cabb48e57dbc4" }
 
 [[language]]
 name = "minot"
@@ -22,7 +22,7 @@ indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "minot"
-source = { git = "https://github.com/stelzo/tree-sitter-minot", rev = "225dd5200e00cc894b51d94edd3463a3ec466fb5" }
+source = { git = "https://codeberg.org/stelzo/tree-sitter-minot", rev = "225dd5200e00cc894b51d94edd3463a3ec466fb5" }
 
 [[language]]
 name = "toml"
