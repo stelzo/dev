@@ -1,5 +1,5 @@
 // Configuration
-#define ZOOM_DURATION 0.8
+#define ZOOM_DURATION 0.3
 #define MAX_SCALE 1.7
 
 float easeOutCubic(float t) {

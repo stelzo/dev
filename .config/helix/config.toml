@@ -45,3 +45,4 @@ display-inlay-hints = true
 
 [editor.cursor-shape]
 insert = "bar"
+normal = "bar"
