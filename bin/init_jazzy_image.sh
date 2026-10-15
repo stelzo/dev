@@ -51,7 +51,7 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-sudo apt-get update --assume-yes && sudo apt-get install ros-dev-tools ros-jazzy-desktop --assume-yes
+sudo apt-get update --assume-yes && sudo apt-get install ros-dev-tools ros-jazzy-desktop ros-jazzy-rmw-zenoh-cpp --assume-yes
 
 sudo apt-get install libclang-dev --assume-yes
 
@@ -65,3 +65,6 @@ sudo apt-get update -y
 git clone https://github.com/edc/bass.git /tmp/bass && cd /tmp/bass && make install && cd -
 
 echo "Installed ROS2 Jazzy Environment"
+echo ""
+echo "Use zenoh by adding export RMW_IMPLEMENTATION=rmw_zenoh_cpp to your .bashrc"
+echo "... and start a router: ros2 run rmw_zenoh_cpp rmw_zenohd"

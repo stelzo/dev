@@ -26,7 +26,7 @@ git pull origin main
 
 Tools
 ```sh
-sudo pacman -S ghostty rustup go zig cargo-zigbuild cargo-msrv ripgrep presenterm zoxide eza tokei starship gitui taplo-cli tinymist yaml-language-server neovim tmux cargo-binstall yazi starship ttf-iosevka-nerd ttf-iosevkaterm-nerd rofi hyprpicker python-pywal blueman bluez networkmanager swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr hyprpaper hyprlock dmenu cava uv resvg
+sudo pacman -S ghostty rustup go zig cargo-zigbuild cargo-msrv ripgrep presenterm zoxide eza tokei starship gitui taplo-cli tinymist yaml-language-server neovim tmux cargo-binstall yazi starship ttf-iosevka-nerd ttf-iosevkaterm-nerd rofi hyprpicker python-pywal blueman bluez networkmanager swaync xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr hyprpaper hyprlock dmenu cava uv resvg bluez bluez-utils blueman harper texlab
 
 rustup default stable
 rustup component add rust-analyzer
@@ -72,7 +72,7 @@ cp /tmp/tree-sitter-ratslang/queries/*.scm ~/.config/helix/runtime/queries/ratsl
 hx --grammar fetchc
 hx --grammar build
 
-paru -S swww pywal wofi fd python-pywalfox quickshell-git fish-bass-git
+paru -S swww pywal wofi fd python-pywalfox quickshell-git fish-bass-git maplemono-ttf lichtblick-bin
 fish_add_path ~/bin
 ln -s ~/.config/hypr/wallpaper.sh ~/bin/wall
 systemctl --user enable --now xdg-desktop-portal.service
